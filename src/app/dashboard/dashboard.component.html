@@ -1,0 +1,96 @@
+<section class="mt-5">
+    <div class="container-fluid">
+        <div class="container shadow rounded-3 col-md-6">
+            <div class="row p-4">
+                <div class="col-md fs-3 text-center my-2">
+                    <p>Investment App</p>
+                </div>
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-7 my-2">
+                            <input type="number" name="amount" id="amount" placeholder="Amount" [(ngModel)]="user.amount" (input)="calculate()" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-7 my-2">
+                            <input type="date" name="date" id="date" (input)="calculate1()" placeholder="Enter date" [(ngModel)]="user.startdate" class="form-control">
+                        </div>
+                        <!-- {{user.startdate}} -->
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-7 my-2">
+                            <input type="date" name="date1" id="date1" (input)="calculate1()" placeholder="Enter end date" [(ngModel)]="user.enddate" class="form-control">
+                        </div>
+                        <!-- {{user.enddate}} -->
+
+                    </div>
+                    <!-- <div class="row justify-content-center">
+                        <div class="col-6 my-2">
+                            <input type="number" name="days" id="days" placeholder="Days" [(ngModel)]="user.days"  (input)="calculate1()" class="form-control">
+                        </div>
+                    </div>
+                    -->
+                  <div class="row justify-content-center">
+                        <div class="col-7 my-2">
+                            <input type="number" name="result" id="result" placeholder="Result" [(ngModel)]="user.result" class="form-control" (input)="calculate1()" >
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-7 my-2 d-flex justify-content-center">
+                            <!-- <button class="btn btn-primary m-2" (click)="calculate()">Calculate </button> -->
+                            <button class="btn btn-primary m-2" (click)="mydata()">Save</button>
+                            
+                        </div>
+                    
+                    </div>
+                    
+                    
+                    
+                    
+
+                </form>
+                
+<!-- <div>
+    {{result}}
+    
+</div> -->
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<div class="container mt-3">
+    <div
+        class="table-responsive"
+    >
+        <table
+            class="table table-primary"
+        >
+            <thead>
+                <tr>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Days</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of users;">
+                    <td scope="row">{{u.amount}}</td>
+                    <td>{{rate}}</td>
+                    <td>{{calculateDays(u.startdate, u.enddate)}}</td>
+                    <td>{{u.result}}</td>
+                    
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+
+<!-- <img src="/assets/cat1.png" alt=""> -->
